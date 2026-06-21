@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INS 205 Assignment</title>
+</head>
+<body>
+
+<h1>My Personal Web Page</h1>
+
+<p>Name: Namisa Uwengmawa Isaac</p>
+<p>Department: Computer Science</p>
+<p>Matric Number: UJ/2025/CP/0208</p>
+
+<a href="mailto:2025cp0208@unijos.edu.ng" id="send-btn">Send Email</a>
+
+<script>
+        /* -------------------------------------------------------
+           Matric-number → button colour
+           Replace the matric value below with your own number.
+           ------------------------------------------------------- */
+        const matric = "UJ/2025/CP/0208";
+
+        /* CHANGE NOTHING BEYOND THIS POINT - CHANGE NOTHING BEYOND THIS POINT */
+
+        function hashString(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+            }
+            return hash;
+        }
+
+        const normalised = matric.trim().toUpperCase();
+        const hue = hashString(normalised) % 360;
+        const buttonColour = `hsl(${hue}, 65%, 45%)`;
+
+        document.getElementById("send-btn").style.background = buttonColour;
+        document.getElementById("send-btn").style.color = "white";
+        document.getElementById("send-btn").style.padding = "10px 20px";
+        document.getElementById("send-btn").style.textDecoration = "none";
+        document.getElementById("send-btn").style.borderRadius = "5px";
+</script>
+
+</body>
+</html>
